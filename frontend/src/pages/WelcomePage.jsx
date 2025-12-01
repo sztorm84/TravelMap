@@ -46,7 +46,7 @@ export default function WelcomePage() {
           </div>
           <div className="author-bio">
             <h3>Hej, tu Twój Przewodnik!</h3>
-            <p>Nazywam się Jan i podróżuję po świecie, tworząc tę cyfrową mapę wspomnień.</p>
+            <p>Nazywam się Dominik i podróżuję po świecie, tworząc tę cyfrową mapę wspomnień.</p>
           </div>
         </section>
         <h2 className="section-title">Najnowsze wpisy</h2>
