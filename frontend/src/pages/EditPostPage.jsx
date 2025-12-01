@@ -39,7 +39,7 @@ export default function EditPostPage() {
 
   return (
     <div style={{ 
-      width: "100%",
+      width: "60%",
       maxWidth: "95%", 
       margin: "0 auto", 
       padding: "2rem 0",
