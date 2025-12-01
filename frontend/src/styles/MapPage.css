@@ -1,0 +1,198 @@
+.map-page {
+  display: flex;
+  width: 100%;
+  height: calc(100vh - 140px);
+  overflow: hidden;
+}
+
+.map-area {
+  flex: 3;
+  height: 100%;
+  position: relative;
+}
+
+.sidebar {
+  flex: 1;
+  background-color: #0f172a;
+  padding: 1rem;
+  overflow-y: auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.list-card, .new-list {
+  background-color: #2d3b55;
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  animation: slideInLeft 0.5s ease forwards;
+  border-left: 4px solid transparent;
+}
+
+.list-card:hover, .new-list:hover {
+  background-color: #3a4a6a;
+}
+
+.new-list {
+  text-align: center;
+  border: 1px dashed #64748b;
+  color: #94a3b8;
+}
+
+.new-list:hover {
+  color: #e2e8f0;
+  border-color: #94a3b8;
+}
+
+.card-title {
+  font-weight: bold;
+  color: #e2e8f0;
+}
+
+.sidebar-hint {
+  color: #94a3b8;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.list-card.active {
+  background-color: #1e293b;
+  border-left: 4px solid #38bdf8;
+  cursor: default;
+  transform: scale(1.01);
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.list-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.expanded-pins {
+  margin-top: 15px;
+  padding-top: 10px;
+  border-top: 1px solid #334155;
+  animation: slideDown 0.3s ease-out;
+}
+
+.mini-pin-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 12px;
+  font-size: 0.9rem;
+  color: #cbd5e1;
+}
+
+.pin-dot {
+  margin-top: 4px;
+  font-size: 1.2rem; 
+  line-height: 1;
+}
+
+.btn-read-full {
+  display: block;
+  margin-top: 15px;
+  padding: 10px;
+  text-align: center;
+  background-color: #38bdf8;
+  color: #0f172a;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  transition: background 0.2s;
+}
+
+.btn-read-full:hover {
+  background-color: #0ea5e9;
+}
+
+.btn-close-view {
+  background: none;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+  font-size: 1.2rem;
+  padding: 0 5px;
+  transition: color 0.2s;
+}
+
+.btn-close-view:hover {
+  color: #ef4444;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+  text-decoration: underline;
+  font-size: 0.9rem;
+}
+
+.back-btn:hover {
+  color: #e2e8f0;
+}
+
+.custom-svg-icon {
+  background: none !important;
+  border: none !important;
+}
+
+.custom-popup .leaflet-popup-content-wrapper {
+  background: rgba(15, 23, 42, 0.95);
+  color: #e2e8f0;
+  border-radius: 8px;
+}
+
+.custom-popup .leaflet-popup-tip {
+  background: rgba(15, 23, 42, 0.95);
+}
+
+.custom-popup strong {
+  color: #38bdf8;
+}
+
+.popup-link {
+  color: #38bdf8;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.popup-link:hover {
+  text-decoration: underline;
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.text-content {
+  flex: 1;
+  word-break: break-word;
+}
+
+.row-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+  width: 100%;
+}
+
+.center-v {
+  align-items: center;
+}

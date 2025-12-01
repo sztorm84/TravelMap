@@ -1,0 +1,21 @@
+# --- OCHRONA BACKENDU (Django) ---
+backend/venv/
+backend/env/
+backend/.env
+backend/db.sqlite3
+backend/__pycache__/
+backend/*.py[cod]
+backend/staticfiles/
+backend/media/
+
+# --- OCHRONA FRONTENDU (React) ---
+frontend/node_modules/
+frontend/dist/
+frontend/build/
+frontend/.env
+frontend/.DS_Store
+
+# --- OGÓLNE ---
+.DS_Store
+.vscode/
+.idea/
