@@ -116,50 +116,6 @@ export default function MapPage() {
 
   return (
     <div className="map-page">
-      <div className="map-area">
-        <MapContainer center={[52.0, 19.0]} zoom={4} style={{ height: "100%", width: "100%" }} zoomControl={false}>
-          <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" attribution='&copy; OpenStreetMap' />
-          <MapClickHandler />
-          
-          <MapUpdater activePost={selectedPost} allPosts={mapPosts} />
-
-          {selectedPostId ? (
-              selectedPost && selectedPost.pins.map(pin => (
-                  <Marker 
-                    key={pin.id} 
-                    position={[parseFloat(pin.lat), parseFloat(pin.lng)]}
-                    icon={createColoredSvgIcon(pin.color || "#3b82f6")}
-                  >
-                      <Popup>
-                          <strong>{pin.name}</strong><br/>
-                          {pin.description}
-                      </Popup>
-                  </Marker>
-              ))
-          ) : (
-              mapPosts.map(post => {
-                const coords = getMainCoords(post);
-                if(!coords) return null;
-                return (
-                    <Marker 
-                        key={post.id} 
-                        position={coords}
-                        icon={createColoredSvgIcon(user ? "#3b82f6" : "#ef4444")}
-                        eventHandlers={{
-                            click: () => setSelectedPostId(post.id)
-                        }}
-                    >
-                        <Popup>
-                            <strong>{post.title}</strong>
-                            <p style={{margin:0, fontSize:'0.8rem'}}>Kliknij, by zobaczyć trasę</p>
-                        </Popup>
-                    </Marker>
-                )
-              })
-          )}
-        </MapContainer>
-      </div>
-
       <div className="sidebar">
         {!user ? (
             <>
@@ -256,6 +212,49 @@ export default function MapPage() {
                 )}
             </>
         )}
+      </div>
+      <div className="map-area">
+        <MapContainer center={[52.0, 19.0]} zoom={4} style={{ height: "100%", width: "100%" }} zoomControl={false}>
+          <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" attribution='&copy; OpenStreetMap' />
+          <MapClickHandler />
+          
+          <MapUpdater activePost={selectedPost} allPosts={mapPosts} />
+
+          {selectedPostId ? (
+              selectedPost && selectedPost.pins.map(pin => (
+                  <Marker 
+                    key={pin.id} 
+                    position={[parseFloat(pin.lat), parseFloat(pin.lng)]}
+                    icon={createColoredSvgIcon(pin.color || "#3b82f6")}
+                  >
+                      <Popup>
+                          <strong>{pin.name}</strong><br/>
+                          {pin.description}
+                      </Popup>
+                  </Marker>
+              ))
+          ) : (
+              mapPosts.map(post => {
+                const coords = getMainCoords(post);
+                if(!coords) return null;
+                return (
+                    <Marker 
+                        key={post.id} 
+                        position={coords}
+                        icon={createColoredSvgIcon(user ? "#3b82f6" : "#ef4444")}
+                        eventHandlers={{
+                            click: () => setSelectedPostId(post.id)
+                        }}
+                    >
+                        <Popup>
+                            <strong>{post.title}</strong>
+                            <p style={{margin:0, fontSize:'0.8rem'}}>Kliknij, by zobaczyć trasę</p>
+                        </Popup>
+                    </Marker>
+                )
+              })
+          )}
+        </MapContainer>
       </div>
     </div>
   );
