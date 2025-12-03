@@ -8,7 +8,7 @@
 .map-area {
   flex: 3;
   height: 100%;
-  position: relative;
+  position: flex;
 }
 
 .sidebar {
@@ -17,7 +17,7 @@
   padding: 1rem;
   overflow-y: auto;
   height: 100%;
-  display: flex;
+  display: relative;
   flex-direction: column;
 }
 
